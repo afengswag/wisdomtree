@@ -4,6 +4,6 @@ import com.wisdomtree.entity.Teacher;
 
 public interface TeacherService {
 	
-	Teacher selectStudentByName(String teaName);
+//	Teacher selectStudentByName(String teaName);
 
 }

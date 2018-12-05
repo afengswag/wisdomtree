@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -17,9 +18,13 @@ import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import lombok.Data;
 @Data
 @Table(name="student_tb")
+@Entity
 public class Student {
 	@Id
 	@GeneratedValue
@@ -43,11 +48,8 @@ public class Student {
 	private Integer teacherId;
 	/*private Set<Teacher> set = new HashSet<Teacher>();*/
 	private String lastUpdateName;
-	@OneToMany
-	@JoinTable(name = "student_headPortait_tb", joinColumns = {
-			@JoinColumn(name = "student_headPortait_tb_stu_id") }, inverseJoinColumns = {
-					@JoinColumn(name = "student_headPortait_tb_headPortait_id") })
-	private Set<HeadPortait> set = new HashSet<HeadPortait>();
+	
+	private Integer headPortaitId;
 	
 	@Column(insertable=false,columnDefinition="int default 1")
 	private int isDel;

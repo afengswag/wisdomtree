@@ -5,7 +5,7 @@ import com.wisdomtree.entity.Objective;
 public interface TestPaperService {
 	
 	
-	Objective saveObjective(Objective objective);
+//	Objective saveObjective(Objective objective);
 
 }
 

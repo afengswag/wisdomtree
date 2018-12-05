@@ -14,37 +14,37 @@ import com.wisdomtree.service.TestPaperService;
 @RequestMapping("testPaper")
 public class TestPaperController {
 
-	private Map<String, Object> map = new HashMap<String, Object>();
-	@Autowired
-	TestPaperService tps;
-	
-	@RequestMapping("saveObjective")
-	private Object saveObjective(Objective objective) {
-		
-		String massage ;
-		if(objective.getObjectiveId()==null) {
-			
-			massage = "添加";
-		}
-		else {
-			massage = "修改";
-			
-		}
-		Objective objective2 = new Objective();
-		
-		objective2 = tps.saveObjective(objective);
-		
-		if(objective2!=null) {
-			
-			map.put("success", true);
-			map.put("massage",massage+"成功");
-		}
-		else {
-
-		    map.put("success", false);
-		    map.put("massage", massage+"失败");
-		}
-		return map;
-	}
+//	private Map<String, Object> map = new HashMap<String, Object>();
+//	@Autowired
+//	TestPaperService tps;
+//	
+//	@RequestMapping("saveObjective")
+//	private Object saveObjective(Objective objective) {
+//		
+//		String massage ;
+//		if(objective.getObjectiveId()==null) {
+//			
+//			massage = "添加";
+//		}
+//		else {
+//			massage = "修改";
+//			
+//		}
+//		Objective objective2 = new Objective();
+//		
+//		objective2 = tps.saveObjective(objective);
+//		
+//		if(objective2!=null) {
+//			
+//			map.put("success", true);
+//			map.put("massage",massage+"成功");
+//		}
+//		else {
+//
+//		    map.put("success", false);
+//		    map.put("massage", massage+"失败");
+//		}
+//		return map;
+//	}
 	
 }
