@@ -30,6 +30,7 @@ public class SubjectiveController {
 	public Map<String, Object> addSubjective(Subjective subjective){
 		
 		Subjective k = subjectiveRespository.save(subjective);
+		System.out.println(k);
 		if (k!=null&&!k.equals(" ")) {
 			map.put("success", true);
 			map.put("message", "添加成功!");
@@ -49,7 +50,7 @@ public class SubjectiveController {
 		Subjective k = subjectiveRespository.save(subjective);
 		if (k!=null&&!k.equals(" ")) {
 			map.put("success", true);
-			map.put("message", "添加成功!");
+			map.put("message", "删除成功!");
 		}
 		return map;
 	}

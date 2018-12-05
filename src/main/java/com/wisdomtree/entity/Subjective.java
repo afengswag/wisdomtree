@@ -5,6 +5,7 @@ package com.wisdomtree.entity;
  *
  */
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -17,7 +18,11 @@ import lombok.Data;
 @Data
 @Table(name="subjective_tb")
 @Entity
-public class Subjective {
+public class Subjective implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
 	private int subjectiveId;
