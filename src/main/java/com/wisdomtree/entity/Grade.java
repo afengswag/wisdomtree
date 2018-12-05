@@ -1,5 +1,6 @@
 package com.wisdomtree.entity;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,7 +13,7 @@ import lombok.Data;
  *
  */
 @Data
-@Table
+@Table(name="grade_tb")
 public class Grade {
 	@Id
 	@GeneratedValue
@@ -21,4 +22,7 @@ public class Grade {
 	/*@OneToOne
 	@JsonIgnore*/
 	private Major major;
+	@Column(insertable=false,columnDefinition="int default 1")
+	private int isDel;
+
 }

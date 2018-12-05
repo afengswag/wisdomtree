@@ -3,6 +3,7 @@ package com.wisdomtree.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -33,4 +34,7 @@ public class Major {
 			@JoinColumn(name = "major_clazz_tb_major_id") }, inverseJoinColumns = {
 					@JoinColumn(name = "major_clazz_tb_clazz_id") })
 	private Set<Clazz> set = new HashSet<Clazz>();
+	@Column(insertable=false,columnDefinition="int default 1")
+	private int isDel;
+
 }

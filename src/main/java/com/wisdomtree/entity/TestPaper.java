@@ -7,13 +7,14 @@ package com.wisdomtree.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
 @Data
-@Table
+@Table(name="test_paper_tb")
 public class TestPaper {
 	@Id
 	@GeneratedValue
@@ -32,4 +33,7 @@ public class TestPaper {
 	private int allPeople;
 	private String creator;
 	private Date createTime;
+	@Column(insertable=false,columnDefinition="int default 1")
+	private int isDel;
+
 }

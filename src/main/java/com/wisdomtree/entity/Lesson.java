@@ -3,6 +3,7 @@ package com.wisdomtree.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -42,5 +43,8 @@ public class Lesson {
 	private Set<LessonChapter> chapters = new HashSet<LessonChapter>();
 
 	private String isopen;
+
+	@Column(insertable=false,columnDefinition="int default 1")
+	private int isDel;
 
 }

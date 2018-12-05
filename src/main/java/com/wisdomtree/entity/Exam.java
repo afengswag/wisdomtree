@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -45,4 +46,7 @@ public class Exam {
 	@OneToOne
 	@JsonIgnore
 	private TestPaper paper;
+	@Column(insertable=false,columnDefinition="int default 1")
+	private int isDel;
+
 }

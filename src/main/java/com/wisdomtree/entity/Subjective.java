@@ -7,13 +7,14 @@ package com.wisdomtree.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
 @Data
-@Table
+@Table(name="subjective_tb")
 public class Subjective {
 	@Id
 	@GeneratedValue
@@ -31,4 +32,7 @@ public class Subjective {
 	private String assessStatus;
 	private String assessor;
 	private String subjectivePoint;
+	@Column(insertable=false,columnDefinition="int default 1")
+	private int isDel;
+
 }

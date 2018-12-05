@@ -2,6 +2,7 @@ package com.wisdomtree.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -16,23 +17,26 @@ import lombok.Data;
  *
  */
 @Data
-@Table
+@Table(name="objective_tb")
 public class Objective {
 	@Id
 	@GeneratedValue
-	private int objectiveId;
+	private Integer objectiveId;
 	private int lessonId;
-	private String titleDifficulty;
+	private String titleDifficulty;//难度
 	private String objectiveContent;
 	private int objectiveScore;
 	private String answer;
-	private String creator;
+	private String creator;//创建人
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss" )
 	private Date createTime;
 	private String revisor;
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss" )
 	private Date revisorTime;
-	private String anditStatus;
+	private String anditStatus;//审核状态
 	private String anditor;
 	private String subjectivePoint;
+	@Column(insertable=false,columnDefinition="int default 1")
+	private int isDel;
+
 }

@@ -1,5 +1,6 @@
 package com.wisdomtree.entity;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,7 +13,7 @@ import lombok.Data;
  *
  */
 @Data
-@Table
+@Table(name="student_answer_tb")
 public class StudentAnswer {
 	@Id
 	@GeneratedValue
@@ -22,4 +23,7 @@ public class StudentAnswer {
 	private Integer objectiveId;
 	private String myChoose;
 	private Integer score;
+	@Column(insertable=false,columnDefinition="int default 1")
+	private int isDel;
+
 }

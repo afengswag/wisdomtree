@@ -7,6 +7,7 @@ package com.wisdomtree.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -29,4 +30,7 @@ public class Teacher {
 	private int dapartmentId;
 	private Date lastudentpdateTime;
 	private String lastudentpdateName;
+	@Column(insertable=false,columnDefinition="int default 1")
+	private int isDel;
+
 }

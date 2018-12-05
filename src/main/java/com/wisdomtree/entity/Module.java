@@ -7,6 +7,7 @@ package com.wisdomtree.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,7 +16,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 @Data
-@Table
+@Table(name="module_tb")
 public class Module {
 	@Id
 	@GeneratedValue
@@ -30,4 +31,7 @@ public class Module {
 	private int parentId;
 	private String icon;
 	private String top_tab;
+	@Column(insertable=false,columnDefinition="int default 1")
+	private int isDel;
+
 }

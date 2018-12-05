@@ -13,7 +13,7 @@ import lombok.Data;
  *
  */
 @Data
-@Table
+@Table(name="publiclessoninfo_tb")
 public class Publiclessoninfo {
 	@Id
 	@GeneratedValue

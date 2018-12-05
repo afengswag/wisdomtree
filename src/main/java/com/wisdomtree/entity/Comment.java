@@ -1,5 +1,6 @@
 package com.wisdomtree.entity;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -29,4 +30,8 @@ public class Comment {
 	@JsonIgnore
 	private Lesson lesson;
 	private String type;
+	
+	@Column(insertable=false,columnDefinition="int default 1")
+	private int isDel;
+
 }

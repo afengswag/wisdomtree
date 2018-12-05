@@ -5,6 +5,7 @@ package com.wisdomtree.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -42,5 +43,7 @@ public class College {
 			@JoinColumn(name = "college_major_tb_college_id") }, inverseJoinColumns = {
 					@JoinColumn(name = "college_major_tb_major_id") })
 	private Set<Major> majors = new HashSet<Major>();
-	
+	@Column(insertable=false,columnDefinition="int default 1")
+	private int isDel;
+
 }

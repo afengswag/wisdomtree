@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -52,5 +53,7 @@ public class Clazz {
 			@JoinColumn(name = "clazz_student_tb_clazz_id") }, inverseJoinColumns = {
 					@JoinColumn(name = "clazz_student_tb_stu_id") })
 	private Set<Student> set = new HashSet<Student>();
+	@Column(insertable=false,columnDefinition="int default 1")
+	private int isDel;
 
 }
