@@ -27,18 +27,19 @@ public class Subjective implements Serializable{
 	@GeneratedValue
 	private int subjectiveId;
 	private int lessonId;
+	private String subjectivePoint;
 	private String subjectiveType;
 	private String titleDifficulty;
-	private String subjectiveContent;
 	private int subjectiveScore; 
 	private String answer;
 	private String creator;
+	private String subjectiveContent;
 	private Date createTime; 
 	private String lastRevisor;
 	private Date revisorTime;
 	private String assessStatus;
 	private String assessor;
-	private String subjectivePoint;
+	
 	@Column(insertable=false,columnDefinition="int default 1")
 	private int isDel;
 
