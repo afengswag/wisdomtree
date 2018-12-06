@@ -16,12 +16,12 @@ import org.springframework.stereotype.Service;
 
 import com.wisdomtree.entity.Subjective;
 import com.wisdomtree.entity.search.SubjectiveSearch;
-import com.wisdomtree.repository.SubjectiveRespository;
+import com.wisdomtree.repository.SubjectiveRepository;
 import com.wisdomtree.service.SubjectiveService;
 @Service
 public class SubjectiveServiceImpl implements SubjectiveService{
 	@Autowired
-	private SubjectiveRespository subjectiveRespository;
+	private SubjectiveRepository subjectiveRespository;
 	@Override
 	public int deleteInPage(Integer subjectiveId) {
 		// TODO Auto-generated method stub

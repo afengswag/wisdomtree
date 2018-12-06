@@ -7,7 +7,7 @@ import com.wisdomtree.entity.Objective;
 import com.wisdomtree.entity.Teacher;
 import com.wisdomtree.entity.TestPaper;
 import com.wisdomtree.repository.ObjectiveRepository;
-import com.wisdomtree.repository.SubjectiveRespository;
+import com.wisdomtree.repository.SubjectiveRepository;
 import com.wisdomtree.repository.TestPaperRepository;
 import com.wisdomtree.service.TestPaperService;
 @Service
